@@ -2,13 +2,13 @@
 {% block content %}
 <div class="ManuForShowTable clearfix">
     <ul>
-        <li><a href="{{url_for('InsertLessons')}}">    Заняття  </a></li>
-        <li><a href="{{url_for('InsertSubjects')}}">   Предмети  </a></li>
-        <li><a href="{{url_for('InsertStudens')}}">    Студенти  </a></li>
-        <li><a href="{{url_for('InsertTeachers')}}">   Викладачі </a></li>
-        <li><a href="{{url_for('InsertGroups')}}">     Групи  </a></li>
-        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудиторії </a></li>
-        <li><a href="{{ url_for('InsertDepartment')}}"> Факультети</a></li>
+        <li><a href="{{url_for('InsertLessons')}}">    Занятия  </a></li>
+        <li><a href="{{url_for('InsertSubjects')}}">   Предметы  </a></li>
+        <li><a href="{{url_for('InsertStudens')}}">    Студенты  </a></li>
+        <li><a href="{{url_for('InsertTeachers')}}">   Преподаватели </a></li>
+        <li><a href="{{url_for('InsertGroups')}}">     Группы  </a></li>
+        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудитории </a></li>
+        <li><a href="{{ url_for('InsertDepartment')}}"> Факультеты</a></li>
     </ul>
 </div>
 
@@ -16,9 +16,9 @@
     <h1 id="title"> Оберіть дію </h1>
     <div class="center">
         <ul>
-            <li><a href="{{url_for('InsertDepartment')}}">   Додати  </a></li>
-            <li><a href="{{url_for('UpdateDepartment')}}">    Змінити  </a></li>
-            <li><a href="{{url_for('DeleteDepartment')}}">    Видалити </a></li>
+            <li><a href="{{url_for('InsertDepartment')}}">   Добавить  </a></li>
+            <li><a href="{{url_for('UpdateDepartment')}}">    Изменить  </a></li>
+            <li><a href="{{url_for('DeleteDepartment')}}">    Удалить </a></li>
         </ul>
     </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="manage-form top">
     <form name="input_data" action="/DeleteDepartment" method="POST">
         {{ form.hidden_tag() }}
-        <h1 id="title"> Видалити факультет</h1>
+        <h1 id="title"> Удалить факультет</h1>
         <p>
             <ul>
                 <li>
@@ -45,7 +45,7 @@
             {{message}}
         </div>
         {% endif %}
-        <button class="btn" type="submit"> Видалити </button>
+        <button class="btn" type="submit"> Удалить </button>
     </form>
 </div>
 {% endblock %}

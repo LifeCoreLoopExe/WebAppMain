@@ -109,7 +109,7 @@ c integer;
 begin
 
 if NEW.start_date > NEW.end_date then
-  RAISE EXCEPTION 'Дата початку повинна бути меншою за дату кінця!';
+  RAISE EXCEPTION 'Дата начала должна быть меньше даты окончания!';
 end if;
 
 select count(*) into c from Lessons l 
@@ -118,7 +118,7 @@ select count(*) into c from Lessons l
 	and l.id_group = NEW.id_group;
 
 if c > 0 then
-	RAISE EXCEPTION 'Пара в цей час уже назначена!';
+	RAISE EXCEPTION 'Пара в это время уже назначена!';
   
 end if;
 return NEW;
@@ -187,119 +187,119 @@ insert into st_groups(title_group, id_dept) values('ЖТ-71',3);
 
 --students
 insert into students(id_group, surname, name, ochestvo) 
-  values(1, 'Борисенко', 'Микола' , 'Максимович');
+  values(1, 'Борисенко', 'Николай' , 'Максимович');
 insert into students(id_group, surname, name, ochestvo) 
-  values(1, 'Стусенко', 'Сергій' , 'Вадимович');
+  values(1, 'Стусенко', 'Сергей' , 'Вадимович');
 insert into students(id_group, surname, name, ochestvo) 
-  values(1, 'Огієнко', 'Світлана' , 'Володимірівна');
+  values(1, 'Огеенко', 'Светлана' , 'Владимировна');
 insert into students(id_group, surname, name, ochestvo) 
   values(2, 'Цимбалюк', 'Яна' , 'Миколаївна');
 insert into students(id_group, surname, name, ochestvo) 
-  values(2, 'Ткаченко', 'Ірина' , 'Анатоліївна');
+  values(2, 'Ткаченко', 'Ирина' , 'Анатоліївна');
 insert into students(id_group, surname, name, ochestvo) 
-  values(2, 'Морозко', 'Ірина' , 'Степанівна');
+  values(2, 'Морозко', 'Ирина' , 'Степанівна');
 
 --Subjects 
-insert into subjects(name_subject) values('WEB-безпека');                       -- 1                        
+insert into subjects(name_subject) values('WEB-безопасность');                       -- 1                        
 insert into subjects(name_subject) values('JAVA');                              -- 2                               
 insert into subjects(name_subject) values('C++');                               -- 3                                
 insert into subjects(name_subject) values('C#');                                -- 4                                 
-insert into subjects(name_subject) values('Операційні системи');                -- 5                 
+insert into subjects(name_subject) values('Операционные системы');                -- 5                 
 insert into subjects(name_subject) values('LINUX');                             -- 6                              
-insert into subjects(name_subject) values('Бази даних');                        -- 7                         
-insert into subjects(name_subject) values('Стеганографія');                     -- 8                      
-insert into subjects(name_subject) values('Дискретна математика');              -- 9               
-insert into subjects(name_subject) values('Вища математика');                   -- 10                    
-insert into subjects(name_subject) values('Криптографія');                      -- 11                       
-insert into subjects(name_subject) values('Англійська мова');                   -- 12                    
-insert into subjects(name_subject) values('Обслуговування ПК');                 -- 13                  
+insert into subjects(name_subject) values('Бази данных');                        -- 7                         
+insert into subjects(name_subject) values('Стеганография');                     -- 8                      
+insert into subjects(name_subject) values('Дискретная математика');              -- 9               
+insert into subjects(name_subject) values('Высшая математика');                   -- 10                    
+insert into subjects(name_subject) values('Криптография');                      -- 11                       
+insert into subjects(name_subject) values('Английский язык');                   -- 12                    
+insert into subjects(name_subject) values('Обслуживание ПК');                 -- 13                  
 insert into subjects(name_subject) values('ТСПП');                              -- 14                               
-insert into subjects(name_subject) values('Числені методи');                    -- 15                     
-insert into subjects(name_subject) values('Мат. логіка');                       -- 16                        
-insert into subjects(name_subject) values('Телекомунікації');                   -- 17                    
-insert into subjects(name_subject) values('Теорія алгоритмів');                 -- 18                  
-insert into subjects(name_subject) values('Мат. методи');                       -- 19                        
-insert into subjects(name_subject) values('Забезпечення якісної інф.');         -- 20          
-insert into subjects(name_subject) values('Інформац. техніка');                 -- 21          
-insert into subjects(name_subject) values('Властивості матеріалів');            -- 22         
-insert into subjects(name_subject) values('Основи електротехніки');             -- 23         
-insert into subjects(name_subject) values('Охорона праці');                     -- 24         
-insert into subjects(name_subject) values('Економіка підприємств');             -- 25         
-insert into subjects(name_subject) values('Дослідження операцій');              -- 26         
-insert into subjects(name_subject) values('Випадкові процеси');                 -- 27         
-insert into subjects(name_subject) values('Методи багатовимірної статистики');  -- 28 
-insert into subjects(name_subject) values('Теорія керування');                  -- 29                   
-insert into subjects(name_subject) values('Рівняння математ. фізики');          -- 30              
-insert into subjects(name_subject) values('Теорія ймовірн. та мат. стат.');     -- 31      
-insert into subjects(name_subject) values('Теорія функц. дійсн. змінної');      -- 32       
-insert into subjects(name_subject) values('Методи наукових обчислень');         -- 33              
-insert into subjects(name_subject) values('Історія');                           -- 34                            
-insert into subjects(name_subject) values('Укр. мова');                         -- 35                          
-insert into subjects(name_subject) values('Методи журналістів');                -- 36                 
-insert into subjects(name_subject) values('Основи журналістики');               -- 37                
-insert into subjects(name_subject) values('Сучасний медіатекст');               -- 38                
-insert into subjects(name_subject) values('Історія публіцистики');              -- 39               
-insert into subjects(name_subject) values('Укр. мов ЗМІ');                      -- 40                       
-insert into subjects(name_subject) values('Професійна етика та медіоправо');    -- 41         
-insert into subjects(name_subject) values('Деталі машин');                      -- 42 
-insert into subjects(name_subject) values('Взаєм., станд., та техн.вимір');     -- 43 
-insert into subjects(name_subject) values('Теор.основи теплотехніки');          -- 44 
-insert into subjects(name_subject) values('Фізичне виховання');                 -- 45 
-insert into subjects(name_subject) values('Економічний аналіз');                -- 46 
-insert into subjects(name_subject) values('Економіка праці');                   -- 47 
-insert into subjects(name_subject) values('Інф. системи в економ.');            -- 48 
-insert into subjects(name_subject) values('Ділова іноземна мова');              -- 49 
+insert into subjects(name_subject) values('Численные методы');                    -- 15                     
+insert into subjects(name_subject) values('Мат. логика');                       -- 16                        
+insert into subjects(name_subject) values('Телекоммуникации');                   -- 17                    
+insert into subjects(name_subject) values('Теория алгоритмов');                 -- 18                  
+insert into subjects(name_subject) values('Мат. методы');                       -- 19                        
+insert into subjects(name_subject) values('Забеспечение качественной инф.');         -- 20          
+insert into subjects(name_subject) values('Информационная техника');                 -- 21          
+insert into subjects(name_subject) values('Свойства материалов');            -- 22         
+insert into subjects(name_subject) values('Основы электротехники');             -- 23         
+insert into subjects(name_subject) values('Охрана труда');                     -- 24         
+insert into subjects(name_subject) values('Экономика предприятий');             -- 25         
+insert into subjects(name_subject) values('Исследование операций');              -- 26         
+insert into subjects(name_subject) values('Случайные процессы');                 -- 27         
+insert into subjects(name_subject) values('Методы многомерной статистики');  -- 28 
+insert into subjects(name_subject) values('Теория управления');                  -- 29                   
+insert into subjects(name_subject) values('Уравнения математической физики');          -- 30              
+insert into subjects(name_subject) values('Теория вероятности и математическая статистика');     -- 31      
+insert into subjects(name_subject) values('Теория функций действительной переменной');      -- 32       
+insert into subjects(name_subject) values('Методы научных вычислений');         -- 33              
+insert into subjects(name_subject) values('История');                           -- 34                            
+insert into subjects(name_subject) values('Русский язык');                         -- 35                          
+insert into subjects(name_subject) values('Методы журналистов');                -- 36                 
+insert into subjects(name_subject) values('Основы журналистики');               -- 37                
+insert into subjects(name_subject) values('Современный медиатекст');               -- 38                
+insert into subjects(name_subject) values('История журналистики');              -- 39               
+insert into subjects(name_subject) values('Русский язык СМИ');                      -- 40                       
+insert into subjects(name_subject) values('Профессиональная этика и медиаправо');    -- 41         
+insert into subjects(name_subject) values('Детали машин');                      -- 42 
+insert into subjects(name_subject) values('Взаимозаменяемость, стандартизация и технические измерения');     -- 43 
+insert into subjects(name_subject) values('Теория вероятности');          -- 44 
+insert into subjects(name_subject) values('Физическое воспитание');                 -- 45 
+insert into subjects(name_subject) values('Экономический анализ');                -- 46 
+insert into subjects(name_subject) values('Экономика труда');                   -- 47 
+insert into subjects(name_subject) values('Информационные системы в экономике');            -- 48 
+insert into subjects(name_subject) values('Деловой иностранный язык');              -- 49 
 insert into subjects(name_subject) values('Економетрика');                      -- 50 
-insert into subjects(name_subject) values('Теорія різання');                    -- 51 
-insert into subjects(name_subject) values('Ріжучий інструмент');                -- 52 
-insert into subjects(name_subject) values('Бізнес рішення');                    -- 53 
-insert into subjects(name_subject) values('Орг. інновац. діяльн');              -- 54 
+insert into subjects(name_subject) values('Теория');                    -- 51 
+insert into subjects(name_subject) values('Проектирование и конструирование');                -- 52 
+insert into subjects(name_subject) values('Бизнес решения');                    -- 53 
+insert into subjects(name_subject) values('Организация инновационной деятельности');              -- 54 
 insert into subjects(name_subject) values('Start-UP');                          -- 55 
-insert into subjects(name_subject) values('Планування та бюджетобудування');    -- 56 
-insert into subjects(name_subject) values('Основи сцен-режисерскої дій.');      -- 57 
-insert into subjects(name_subject) values('Івент менеджмент');                  -- 58 
-insert into subjects(name_subject) values('Ентопсихологія');                    -- 59 
-insert into subjects(name_subject) values('Історія мистества');                 -- 60 
-insert into subjects(name_subject) values('Іміджелогія та брендинг');           -- 61 
-insert into subjects(name_subject) values('Регіональні практики з соц-кул');    -- 62 
+insert into subjects(name_subject) values('Планирование и бюджетирование');    -- 56 
+insert into subjects(name_subject) values('Основы сценического искусства');      -- 57 
+insert into subjects(name_subject) values('Менеджмент событий');                  -- 58 
+insert into subjects(name_subject) values('Энтопсихология');                    -- 59 
+insert into subjects(name_subject) values('История искусства');                 -- 60 
+insert into subjects(name_subject) values('Имиджелогия и брендинг');           -- 61 
+insert into subjects(name_subject) values('Региональные практики социально-культурных');    -- 62 
 
 --Teachers
 insert into Teachers(surname, name, ochestvo)        -- 1  
-  values('Драган', 'Надій', 'Найденович');
+  values('Драгун', 'Надежда', 'Николаевна');
 insert into Teachers(surname, name, ochestvo)        -- 2  
-  values('Вакалюк', 'Вселюб', 'Златович');  
+  values('Витвицький', 'Всеволод', 'Златович');  
 insert into Teachers(surname, name, ochestvo)        -- 3   
-  values('Довгаль', 'Гуляйвітер', 'Богуславович');
+  values('Довгаль', 'Галина', 'Богуславовна');
 insert into Teachers(surname, name, ochestvo)        -- 4
-  values('Куновський', 'Вітомир', 'Соломонович');
+  values('Куновський', 'Виктор', 'Соломонович');
 insert into Teachers(surname, name, ochestvo)        -- 5
-  values('Чуприна', 'Матвій', 'Іванович');
+  values('Чуприн', 'Матвей', 'Иванович');
 insert into Teachers(surname, name, ochestvo)        -- 6
-  values('Андрусів', 'Ніка', 'Гордиславівна');
+  values('Андрусевич', 'Ника', 'Гордиславовна');
 insert into Teachers(surname, name, ochestvo)        -- 7
-  values('Авратинська', 'Шанетта', 'Тарасівна');
+  values('Авратинская', 'Шанетта', 'Тарасовна');
 insert into Teachers(surname, name, ochestvo)        -- 8
-  values('Штанько', 'Еммануїла', 'Милославівна');
+  values('Штанько', 'Еммануил', 'Милославович');
 insert into Teachers(surname, name, ochestvo)        -- 9
-  values('Шаблій', 'Зореслава', 'Артурівна');
+  values('Шаблой', 'Зореслава', 'Артуровна');
 insert into Teachers(surname, name, ochestvo)        -- 10
-  values('Сліпченко', 'Чесмил', 'Леонідович');
+  values('Слипченко', 'Чесмила', 'Леонидовна');
 insert into Teachers(surname, name, ochestvo)        -- 11
   values('Трух', 'Юхим', 'Жданович');
 insert into Teachers(surname, name, ochestvo)        -- 12
-  values('Юрчишин', 'Єремій', 'Юхимович');
+  values('Юрчишин', 'Еремей', 'Юхимович');
 insert into Teachers(surname, name, ochestvo)        -- 13
-  values('Саніна', 'Емма', 'Устимівна');
+  values('Смолич', 'Арина', 'Александровна');
 insert into Teachers(surname, name, ochestvo)        -- 14
-  values('Мацько', 'Шарлота', 'Максимівна');
+  values('Мацко', 'Шарлота', 'Максимовна');
 insert into Teachers(surname, name, ochestvo)        -- 15
-  values('Пилипчук', 'Чеслава', 'Федорівна');
+  values('Пилипчук', 'Чеслава', 'Федоровна');
 insert into Teachers(surname, name, ochestvo)        -- 16
-  values('Бернацька', 'Огняна', 'Давидівна');
+  values('Бернацкая', 'Огняна', 'Давидовна');
 insert into Teachers(surname, name, ochestvo)        -- 17
   values('Арсенич', 'Йоган', 'Янович');
 insert into Teachers(surname, name, ochestvo)        -- 18
-  values('Пасенюк', 'Іван', 'Макарович');
+  values('Пасенюк', 'Иван', 'Макарович');
 
 --Lessons 
 --Пары для КБ-61
@@ -321,7 +321,7 @@ values(
     1,                 -- преподаватель
     14,                -- предмет
     1,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     3,                 -- корпус 
     101,               -- номер аудитории
     CURRENT_DATE - 27, -- дата начала предмета
@@ -399,7 +399,7 @@ values(
     3,                 -- преподаватель
     12,                -- предмет
     3,                 -- номер пары
-    'Лекція',        -- тип занятия
+    'Лекция',        -- тип занятия
     1,                 -- корпус 
     107,               -- номер аудитории
     CURRENT_DATE - 26, -- дата начала предмета
@@ -425,7 +425,7 @@ values(
     3,                 -- преподаватель
     24,                -- предмет
     4,                 -- номер пары
-    'Лекція',        -- тип занятия
+    'Лекция',        -- тип занятия
     2,                 -- корпус 
     105,               -- номер аудитории
     CURRENT_DATE - 26, -- дата начала предмета
@@ -477,7 +477,7 @@ values(
     5,                 -- преподаватель
     7,                 -- предмет
     2,                 -- номер пары
-    'Лекція',        -- тип занятия
+    'Лекция',        -- тип занятия
     2,                 -- корпус 
     104,               -- номер аудитории
     CURRENT_DATE - 26, -- дата начала предмета
@@ -529,7 +529,7 @@ values(
     7,                 -- преподаватель
     11,                -- предмет
     2,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     2,                 -- корпус 
     102,               -- номер аудитории
     CURRENT_DATE - 25, -- дата начала предмета
@@ -581,7 +581,7 @@ values(
     1,                 -- преподаватель
     6,                -- предмет
     1,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     2,                 -- корпус 
     102,               -- номер аудитории
     CURRENT_DATE - 24, -- дата начала предмета
@@ -607,7 +607,7 @@ values(
     9,                 -- преподаватель
     8,                 -- предмет
     2,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     1,                 -- корпус 
     101,               -- номер аудитории
     CURRENT_DATE - 24, -- дата начала предмета
@@ -685,7 +685,7 @@ values(
     10,                -- преподаватель
     12,                -- предмет
     3,                 -- номер пары
-    'Лекція',        -- тип занятия
+    'Лекция',        -- тип занятия
     2,                 -- корпус 
     109,               -- номер аудитории
     CURRENT_DATE - 23, -- дата начала предмета
@@ -737,7 +737,7 @@ values(
     10,                -- преподаватель
     12,                -- предмет
     3,                 -- номер пары
-    'Лекція',        -- тип занятия
+    'Лекция',        -- тип занятия
     2,                 -- корпус 
     109,               -- номер аудитории
     CURRENT_DATE - 22, -- дата начала предмета
@@ -763,7 +763,7 @@ values(
     1,                 -- преподаватель
     6,                -- предмет
     1,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     2,                 -- корпус 
     102,               -- номер аудитории
     CURRENT_DATE - 21, -- дата начала предмета
@@ -789,7 +789,7 @@ values(
     9,                 -- преподаватель
     8,                 -- предмет
     2,                 -- номер пары
-    'Лекція',          -- тип занятия
+    'Лекция',          -- тип занятия
     1,                 -- корпус 
     101,               -- номер аудитории
     CURRENT_DATE - 21, -- дата начала предмета
