@@ -1,5 +1,17 @@
 create database scheduleapp;
 \c scheduleapp;
+--Создание таблиц
+CREATE TABLE Subjects (
+  id_subject   serial NOT NULL UNIQUE,
+  name_subject varchar(100) NOT NULL UNIQUE,
+  PRIMARY KEY (id_subject));
+
+CREATE TABLE Teachers (
+  id_teacher serial NOT NULL UNIQUE,
+  surname    varchar(40) NOT NULL,
+  name       varchar(40) NOT NULL, 
+  ochestvo   varchar(40) NOT NULL,
+  PRIMARY KEY (id_teacher));
 
 CREATE TABLE all_User (
   Id_user  serial NOT NULL UNIQUE,
@@ -193,85 +205,85 @@ insert into students(id_group, surname, name, ochestvo)
 insert into students(id_group, surname, name, ochestvo) 
   values(1, 'Огеенко', 'Светлана' , 'Владимировна');
 insert into students(id_group, surname, name, ochestvo) 
-  values(2, 'Цимбалюк', 'Яна' , 'Миколаївна');
+  values(2, 'Цимбалюк', 'Яна' , 'Николаевна');
 insert into students(id_group, surname, name, ochestvo) 
-  values(2, 'Ткаченко', 'Ирина' , 'Анатоліївна');
+  values(2, 'Ткаченко', 'Ирина' , 'Анатольевна');
 insert into students(id_group, surname, name, ochestvo) 
-  values(2, 'Морозко', 'Ирина' , 'Степанівна');
+  values(2, 'Морозко', 'Ирина' , 'Степановна');
 
 --Subjects 
-insert into subjects(name_subject) values('WEB-безопасность');                       -- 1                        
-insert into subjects(name_subject) values('JAVA');                              -- 2                               
-insert into subjects(name_subject) values('C++');                               -- 3                                
-insert into subjects(name_subject) values('C#');                                -- 4                                 
-insert into subjects(name_subject) values('Операционные системы');                -- 5                 
-insert into subjects(name_subject) values('LINUX');                             -- 6                              
-insert into subjects(name_subject) values('Бази данных');                        -- 7                         
-insert into subjects(name_subject) values('Стеганография');                     -- 8                      
-insert into subjects(name_subject) values('Дискретная математика');              -- 9               
+insert into subjects(name_subject) values('Финансовая безопасность');                       -- 1                        
+insert into subjects(name_subject) values('Банковское дело');                              -- 2                               
+insert into subjects(name_subject) values('Финансовый анализ');                               -- 3                                
+insert into subjects(name_subject) values('Бухгалтерский учет');                                -- 4                                 
+insert into subjects(name_subject) values('Банковские операции');                -- 5                 
+insert into subjects(name_subject) values('Финансовый менеджмент');                             -- 6                              
+insert into subjects(name_subject) values('Банковские базы данных');                        -- 7                         
+insert into subjects(name_subject) values('Финансовая математика');                     -- 8                      
+insert into subjects(name_subject) values('Экономическая статистика');              -- 9               
 insert into subjects(name_subject) values('Высшая математика');                   -- 10                    
-insert into subjects(name_subject) values('Криптография');                      -- 11                       
-insert into subjects(name_subject) values('Английский язык');                   -- 12                    
-insert into subjects(name_subject) values('Обслуживание ПК');                 -- 13                  
-insert into subjects(name_subject) values('ТСПП');                              -- 14                               
-insert into subjects(name_subject) values('Численные методы');                    -- 15                     
-insert into subjects(name_subject) values('Мат. логика');                       -- 16                        
-insert into subjects(name_subject) values('Телекоммуникации');                   -- 17                    
-insert into subjects(name_subject) values('Теория алгоритмов');                 -- 18                  
-insert into subjects(name_subject) values('Мат. методы');                       -- 19                        
-insert into subjects(name_subject) values('Забеспечение качественной инф.');         -- 20          
-insert into subjects(name_subject) values('Информационная техника');                 -- 21          
-insert into subjects(name_subject) values('Свойства материалов');            -- 22         
-insert into subjects(name_subject) values('Основы электротехники');             -- 23         
-insert into subjects(name_subject) values('Охрана труда');                     -- 24         
-insert into subjects(name_subject) values('Экономика предприятий');             -- 25         
-insert into subjects(name_subject) values('Исследование операций');              -- 26         
-insert into subjects(name_subject) values('Случайные процессы');                 -- 27         
-insert into subjects(name_subject) values('Методы многомерной статистики');  -- 28 
-insert into subjects(name_subject) values('Теория управления');                  -- 29                   
-insert into subjects(name_subject) values('Уравнения математической физики');          -- 30              
-insert into subjects(name_subject) values('Теория вероятности и математическая статистика');     -- 31      
-insert into subjects(name_subject) values('Теория функций действительной переменной');      -- 32       
-insert into subjects(name_subject) values('Методы научных вычислений');         -- 33              
-insert into subjects(name_subject) values('История');                           -- 34                            
-insert into subjects(name_subject) values('Русский язык');                         -- 35                          
-insert into subjects(name_subject) values('Методы журналистов');                -- 36                 
-insert into subjects(name_subject) values('Основы журналистики');               -- 37                
-insert into subjects(name_subject) values('Современный медиатекст');               -- 38                
-insert into subjects(name_subject) values('История журналистики');              -- 39               
-insert into subjects(name_subject) values('Русский язык СМИ');                      -- 40                       
-insert into subjects(name_subject) values('Профессиональная этика и медиаправо');    -- 41         
-insert into subjects(name_subject) values('Детали машин');                      -- 42 
-insert into subjects(name_subject) values('Взаимозаменяемость, стандартизация и технические измерения');     -- 43 
-insert into subjects(name_subject) values('Теория вероятности');          -- 44 
-insert into subjects(name_subject) values('Физическое воспитание');                 -- 45 
-insert into subjects(name_subject) values('Экономический анализ');                -- 46 
-insert into subjects(name_subject) values('Экономика труда');                   -- 47 
-insert into subjects(name_subject) values('Информационные системы в экономике');            -- 48 
-insert into subjects(name_subject) values('Деловой иностранный язык');              -- 49 
-insert into subjects(name_subject) values('Економетрика');                      -- 50 
-insert into subjects(name_subject) values('Теория');                    -- 51 
-insert into subjects(name_subject) values('Проектирование и конструирование');                -- 52 
-insert into subjects(name_subject) values('Бизнес решения');                    -- 53 
-insert into subjects(name_subject) values('Организация инновационной деятельности');              -- 54 
-insert into subjects(name_subject) values('Start-UP');                          -- 55 
-insert into subjects(name_subject) values('Планирование и бюджетирование');    -- 56 
-insert into subjects(name_subject) values('Основы сценического искусства');      -- 57 
-insert into subjects(name_subject) values('Менеджмент событий');                  -- 58 
-insert into subjects(name_subject) values('Энтопсихология');                    -- 59 
-insert into subjects(name_subject) values('История искусства');                 -- 60 
-insert into subjects(name_subject) values('Имиджелогия и брендинг');           -- 61 
-insert into subjects(name_subject) values('Региональные практики социально-культурных');    -- 62 
+insert into subjects(name_subject) values('Финансовая криптография');                      -- 11                       
+insert into subjects(name_subject) values('Деловой английский');                   -- 12                    
+insert into subjects(name_subject) values('Банковские информационные системы');                 -- 13                  
+insert into subjects(name_subject) values('Теория финансов');                              -- 14                               
+insert into subjects(name_subject) values('Актуарная математика');                    -- 15                     
+insert into subjects(name_subject) values('Финансовая логика');                       -- 16                        
+insert into subjects(name_subject) values('Платежные системы');                   -- 17                    
+insert into subjects(name_subject) values('Теория рисков');                 -- 18                  
+insert into subjects(name_subject) values('Методы оценки активов');                       -- 19                        
+insert into subjects(name_subject) values('Управление качеством банковских услуг');         -- 20          
+insert into subjects(name_subject) values('Банковские технологии');                 -- 21          
+insert into subjects(name_subject) values('Оценка ценных бумаг');            -- 22         
+insert into subjects(name_subject) values('Основы кредитования');             -- 23         
+insert into subjects(name_subject) values('Банковское право');                     -- 24         
+insert into subjects(name_subject) values('Экономика банковского дела');             -- 25         
+insert into subjects(name_subject) values('Инвестиционный анализ');              -- 26         
+insert into subjects(name_subject) values('Финансовые риски');                 -- 27         
+insert into subjects(name_subject) values('Портфельный анализ');  -- 28 
+insert into subjects(name_subject) values('Управление активами');                  -- 29                   
+insert into subjects(name_subject) values('Финансовое моделирование');          -- 30              
+insert into subjects(name_subject) values('Теория вероятности в финансах');     -- 31      
+insert into subjects(name_subject) values('Производные финансовые инструменты');      -- 32       
+insert into subjects(name_subject) values('Методы финансовых вычислений');         -- 33              
+insert into subjects(name_subject) values('История банковского дела');                           -- 34                            
+insert into subjects(name_subject) values('Деловая коммуникация');                         -- 35                          
+insert into subjects(name_subject) values('Методы финансового анализа');                -- 36                 
+insert into subjects(name_subject) values('Основы банковского маркетинга');               -- 37                
+insert into subjects(name_subject) values('Современные банковские продукты');               -- 38                
+insert into subjects(name_subject) values('История финансовых рынков');              -- 39               
+insert into subjects(name_subject) values('Финансовая отчетность');                      -- 40                       
+insert into subjects(name_subject) values('Профессиональная этика банкира');    -- 41         
+insert into subjects(name_subject) values('Управление банком');                      -- 42 
+insert into subjects(name_subject) values('Стандарты банковской деятельности');     -- 43 
+insert into subjects(name_subject) values('Финансовое планирование');          -- 44 
+insert into subjects(name_subject) values('Деловая этика');                 -- 45 
+insert into subjects(name_subject) values('Анализ банковской деятельности');                -- 46 
+insert into subjects(name_subject) values('Оплата труда в банках');                   -- 47 
+insert into subjects(name_subject) values('Банковские информационные системы');            -- 48 
+insert into subjects(name_subject) values('Международные финансы');              -- 49 
+insert into subjects(name_subject) values('Финансовая эконометрика');                      -- 50 
+insert into subjects(name_subject) values('Теория денег');                    -- 51 
+insert into subjects(name_subject) values('Проектное финансирование');                -- 52 
+insert into subjects(name_subject) values('Финансовые решения');                    -- 53 
+insert into subjects(name_subject) values('Инновации в банковской сфере');              -- 54 
+insert into subjects(name_subject) values('Финансовые стартапы');                          -- 55 
+insert into subjects(name_subject) values('Бюджетирование в банке');    -- 56 
+insert into subjects(name_subject) values('Деловые переговоры');      -- 57 
+insert into subjects(name_subject) values('Управление банковскими операциями');                  -- 58 
+insert into subjects(name_subject) values('Психология в финансах');                    -- 59 
+insert into subjects(name_subject) values('История мировых финансов');                 -- 60 
+insert into subjects(name_subject) values('Банковский брендинг');           -- 61 
+insert into subjects(name_subject) values('Региональные банковские практики');    -- 62 
 
 --Teachers
 insert into Teachers(surname, name, ochestvo)        -- 1  
   values('Драгун', 'Надежда', 'Николаевна');
 insert into Teachers(surname, name, ochestvo)        -- 2  
-  values('Витвицький', 'Всеволод', 'Златович');  
+  values('Витвицкий', 'Всеволод', 'Златович');  
 insert into Teachers(surname, name, ochestvo)        -- 3   
   values('Довгаль', 'Галина', 'Богуславовна');
 insert into Teachers(surname, name, ochestvo)        -- 4
-  values('Куновський', 'Виктор', 'Соломонович');
+  values('Куновский', 'Виктор', 'Соломонович');
 insert into Teachers(surname, name, ochestvo)        -- 5
   values('Чуприн', 'Матвей', 'Иванович');
 insert into Teachers(surname, name, ochestvo)        -- 6
