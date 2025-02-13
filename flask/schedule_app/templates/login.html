@@ -3,7 +3,7 @@
 {% block login %}
 <div class="wrap-form">
     <div class="form-login shadow">
-        <h1>Вхід</h1>
+        <h1>Вход</h1>
         <form method="POST" action="/login">
             {{ form.hidden_tag() }}
             <p>
@@ -15,10 +15,10 @@
                 {{ form.password }}<br>
             </p>
             <p>
-                <button class="btn" type="submit"> Війти </button>
+                <button class="btn" type="submit"> Войти </button>
             </p>
             <p>
-                <a href="{{url_for('ForgotPassword')}}">Забули пароль?</a>
+                <a href="{{url_for('ForgotPassword')}}">Забыли пароль?</a>
             </p>
             {% if error %}
             <br>
@@ -32,4 +32,3 @@
     </div>
 </div>
 {% endblock %}
-

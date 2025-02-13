@@ -1,11 +1,11 @@
 ﻿{% extends "layout.html" %}
 {% block content %}
-<h1 class="myh"> Розклад заннять </h1>
+<h1 class="myh"> Расписание занятий </h1>
 <div class="form1">
     <form action="/info" method="POST">
         {{ form.hidden_tag() }}
         <p>
-            <h1> <label for="dateFrom">З</label></h1>
+            <h1> <label for="dateFrom">С</label></h1>
             {{form.dateFrom}}
         </p>
         <br>
@@ -20,7 +20,7 @@
                 {% endfor %}
             </select>
         </p>
-        <button class="btn" type="submit"> Дізнатися </button>
+        <button class="btn" type="submit"> Узнать </button>
     </form>
 </div>
 {% if error %}
@@ -42,7 +42,7 @@
             </p>
             <p>
                 <span>
-                    Немає пар.
+                    Нет пар.
                 </span>
             </p>
         </div>

@@ -1,32 +1,36 @@
 ﻿{% extends "layout.html" %}
 {% block content %}
+{# Верхнее меню навигации #}
 <div class="ManuForShowTable clearfix">
     <ul>
-        <li><a href="{{url_for('InsertLessons')}}"> Заняття  </a></li>
-        <li><a href="{{url_for('InsertSubjects')}}">   Предмети  </a></li>
-        <li><a href="{{url_for('InsertStudens')}}">    Студенти  </a></li>
-        <li><a href="{{url_for('InsertTeachers')}}">   Викладачі </a></li>
-        <li><a href="{{url_for('InsertGroups')}}">     Групи     </a></li>
-        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудиторії </a></li>
-        <li><a href="{{ url_for('InsertDepartment')}}"> Факультети</a></li>
+        <li><a href="{{url_for('InsertLessons')}}"> Занятия  </a></li>
+        <li><a href="{{url_for('InsertSubjects')}}">   Предметы  </a></li>
+        <li><a href="{{url_for('InsertStudens')}}">    Студенты  </a></li>
+        <li><a href="{{url_for('InsertTeachers')}}">   Преподаватели </a></li>
+        <li><a href="{{url_for('InsertGroups')}}">     Группы     </a></li>
+        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудитории </a></li>
+        <li><a href="{{ url_for('InsertDepartment')}}"> Факультеты</a></li>
     </ul>
 </div>
 
+{# Подменю с действиями #}
 <div class="ManuForShowTable clearfix top">
-    <h1 id="title"> Оберіть дію </h1>
+    <h1 id="title"> Выберите действие </h1>
     <div class="center">
         <ul>
-            <li><a href="{{url_for('InsertLessons')}}">   Додати  </a></li>
-            <li><a href="{{url_for('UpdateLessons')}}">    Змінити  </a></li>
-            <li><a href="{{url_for('DeleteLessons')}}">   Видалити </a></li>
+            <li><a href="{{url_for('InsertLessons')}}">   Добавить  </a></li>
+            <li><a href="{{url_for('UpdateLessons')}}">    Изменить  </a></li>
+            <li><a href="{{url_for('DeleteLessons')}}">   Удалить </a></li>
         </ul>
     </div>
 </div>
 
+{# Форма добавления занятия #}
 <div class="manage-form top">
     <form name="input_data" action="/InsertLessons" method="POST">
         {{ form.hidden_tag() }}
-        <h1 id="title"> Додати заняття</h1>
+        <h1 id="title"> Добавить занятие</h1>
+        {# Выбор преподавателя и группы #}
         <p>
             <ul>
                 <li>
@@ -49,6 +53,7 @@
                 </li>
             </ul>
         </p>
+        {# Выбор предмета #}
         <p>
             <ul>
                 <li>
@@ -62,6 +67,7 @@
                 </li>
             </ul>
         </p>
+        {# Выбор аудитории и типа занятия #}
         <p>
             <ul>
                 <li>
@@ -75,47 +81,50 @@
                 </li>
                 <li>
                     <select name="typelesson">
-                        <option disabled>Оберіть частоту</option>
-                        <option selected value="Лекція">Лекція</option>
+                        <option disabled>Выберите тип</option>
+                        <option selected value="Лекция">Лекция</option>
                         <option value="Практика">Практика</option>
                     </select>
                 </li>
             </ul>
         </p>
+        {# Выбор номера пары и частоты #}
         <p>
             <ul>
                 <li>
                     <select name="para">
-                        <option disabled>Оберіть частоту</option>
-                        <option selected value="1">Перша пара</option>
-                        <option value="2">Друга пара</option>
-                        <option value="3">Третя пара</option>
-                        <option value="4">Четверта пара</option>
-                        <option value="5">П'ята пара</option>
+                        <option disabled>Выберите пару</option>
+                        <option selected value="1">Первая пара</option>
+                        <option value="2">Вторая пара</option>
+                        <option value="3">Третья пара</option>
+                        <option value="4">Четвертая пара</option>
+                        <option value="5">Пятая пара</option>
                     </select>
                 </li>
                 <li>
                     <select name="f">
-                        <option disabled>Оберіть частоту</option>
-                        <option selected value="1">Раз на тиждень</option>
-                        <option value="2">Раз на два тижні</option>
-                        <option value="3">Раз на три тижні</option>
+                        <option disabled>Выберите частоту</option>
+                        <option selected value="1">Раз в неделю</option>
+                        <option value="2">Раз в две недели</option>
+                        <option value="3">Раз в три недели</option>
                     </select>
                 </li>
             </ul>
         </p>
+        {# Выбор дат начала и окончания #}
         <p>
             <ul>
                 <li><h1>{{ form.dateFrom.label}} </h1>{{form.dateFrom}}</li>
                 <li><h1>{{ form.dateTo.label}}   </h1>{{form.dateTo}}</li>
             </ul>
         </p>
+        {# Вывод сообщений об ошибках #}
         {% if message%}
         <div class="message">
             {{message}}
         </div>
         {% endif %}
-        <button class="btn" type="submit"> Додати </button>
+        <button class="btn" type="submit"> Добавить </button>
     </form>
 </div>
 {% endblock %}

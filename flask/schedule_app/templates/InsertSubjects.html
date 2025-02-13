@@ -2,23 +2,23 @@
 {% block content %}
 <div class="ManuForShowTable clearfix">
     <ul>
-        <li><a href="{{url_for('InsertLessons')}}"> Заняття  </a></li>
-        <li><a href="{{url_for('InsertSubjects')}}">   Предмети  </a></li>
-        <li><a href="{{url_for('InsertStudens')}}">    Студенти  </a></li>
-        <li><a href="{{url_for('InsertTeachers')}}">   Викладачі </a></li>
-        <li><a href="{{url_for('InsertGroups')}}"> Групи  </a></li>
-        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудиторії </a></li>
-        <li><a href="{{ url_for('InsertDepartment')}}"> Факультети</a></li>
+        <li><a href="{{url_for('InsertLessons')}}"> Занятия  </a></li>
+        <li><a href="{{url_for('InsertSubjects')}}">   Предметы  </a></li>
+        <li><a href="{{url_for('InsertStudens')}}">    Студенты  </a></li>
+        <li><a href="{{url_for('InsertTeachers')}}">   Преподаватели </a></li>
+        <li><a href="{{url_for('InsertGroups')}}"> Группы  </a></li>
+        <li><a href="{{ url_for('InsertClassrooms')}}"> Аудитории </a></li>
+        <li><a href="{{ url_for('InsertDepartment')}}"> Факультеты</a></li>
     </ul>
 </div>
 
 <div class="ManuForShowTable clearfix top">
-    <h1 id="title"> Оберіть дію </h1>
+    <h1 id="title"> Выберите действие </h1>
     <div class="center">
         <ul>
-            <li><a href="{{url_for('InsertSubjects')}}">   Додати  </a></li>
-            <li><a href="{{url_for('UpdateSubjects')}}">    Змінити  </a></li>
-            <li><a href="{{url_for('DeleteSubjects')}}">   Видалити </a></li>
+            <li><a href="{{url_for('InsertSubjects')}}">   Добавить  </a></li>
+            <li><a href="{{url_for('UpdateSubjects')}}">    Изменить  </a></li>
+            <li><a href="{{url_for('DeleteSubjects')}}">   Удалить </a></li>
         </ul>
     </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="manage-form top">
     <form name="input_data" action="/InsertSubjects" method="POST">
         {{ form.hidden_tag() }}
-        <h1 id="title"> Додати предмет</h1>
+        <h1 id="title"> Добавить предмет</h1>
         <p>
             <ul>
                 <li>
@@ -41,7 +41,7 @@
         </div>
         {% endif %}
 
-        <button class="btn" type="submit" name="btn" value="1"> Додати </button>
+        <button class="btn" type="submit" name="btn" value="1"> Добавить </button>
     </form>
 </div>
 {% endblock %}

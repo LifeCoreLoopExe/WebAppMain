@@ -2,11 +2,11 @@
 {% block content %}
 <div class="ShowTable clearfix">
     <h1></h1>
-    <h1> Дізнатися у які дні в аудиторії Х немає пар, а в інших аудиторіях є? </h1>
+    <h1> Узнать в какие дни в аудитории Х нет пар, а в других аудиториях есть? </h1>
     <div class="formInfo manage-form">
         <form action="/ShowClassDay" method="POST">
             <p>
-                <h1> Оберіть аудиторію </h1>
+                <h1> Выберите аудиторию </h1>
                 {{form.d}}
                 <datalist id="id">
                     {% for a in vClassrooms %}
@@ -14,7 +14,7 @@
                     {% endfor%}
                 </datalist>
             </p>
-            <button class="btn" type="submit"> Дізнатися </button>
+            <button class="btn" type="submit"> Узнать </button>
         </form>
     </div>
 
@@ -25,7 +25,7 @@
     {% if vDay %}
     <table class="fontSizeBig">
         <tr>
-            <th>Дні</th>
+            <th>Дни</th>
         </tr>
         {% for s in vDay %}
         <tr>
